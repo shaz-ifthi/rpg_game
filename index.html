@@ -12,14 +12,14 @@
 
     <style>
         .fader {
-            opacity : 0.5;
+            opacity: 0.5;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row charcters"></div>
+        <div class="row characters"></div>
         <div class="row gameplay"></div>
     </div>
 
@@ -33,41 +33,41 @@
             {
                 name: "Capt America",
                 hp: 50,
-                image: "./superHeros/captAmerica.jpg"
+                image: "./assets/images/captAmerica.jpg"
 
             },
             {
                 name: "Black Widow",
                 hp: 50,
-                image: "./desktop/superHeros/blackWidow.jpg"
+                image: "./assets/images/blackWidow.jpg"
 
 
             },
             {
                 name: "Spiderman",
                 hp: 50,
-                image: "Desktop/superHeros/spiderman.jpg"
+                image: "./assets/images/spiderman.jpg"
 
 
             },
             {
                 name: "Iron Man",
                 hp: 50,
-                image: "Desktop/superHeros/ironMan.jpg"
+                image: "./assets/images/ironMan.jpg"
 
 
             },
             {
                 name: "Wonder Woman",
                 hp: 50,
-                image: "./superHeros/wonderWoman.png"
+                image: "./assets/images/wonderWoman.jpg"
 
 
             },
             {
-                name: "Hulk",
+                name: "Cat Woman",
                 hp: 50,
-                image: "Desktop/superHeros/hulk.png"
+                image: "./assets/images/catWoman.jpg"
 
 
             },
@@ -93,14 +93,36 @@
         var isEnemyAlive
         // attack function
         // init game function
+
+
+        // $('.charArr').on('click',"img",function() {
+        // })
+
+
+        // $(".char").on("click", ".char", function initGame() {
+        //     isHeroChosen = false
+        //     isenemyCosen = false
+        //     var num = Math.floor(12 / charArr.length)
+        //     for (var i = 0; i < charArr.length; i++) {
+        //         var charThing = $("<div id='character-" + i + "' class= 'col-md-" + num + "'char value='" + i + "'></div>")
+        //         charThing.html(
+        //             "<img src='" + charArr[i].image + "' style='width:150px; height:150px;' /><h3>" + charArr[i].name + "</h3>"
+        //         )
+        //         $(".characters").append(charThing)
+
+
+        //     }
+        // }
+
+
         function initGame() {
             isHeroChosen = false
             isenemyCosen = false
             var num = Math.floor(12 / charArr.length)
             for (var i = 0; i < charArr.length; i++) {
-                var charThing = $("<div id='character-"+i+"' class= 'col-md-" + num +"'char value='"+i+ "'></div>")
+                var charThing = $("<div id='character-" + i + "' class= 'col-md-" + num + "'char value='" + i + "'></div>")
                 charThing.html(
-                    "<img src='" +charArr[i].image + "' style='width:150px; height:150px;' /><h3>"+charArr[i].name+"</h3>"
+                    "<img src='" + charArr[i].image + "' style='width:150px; height:150px;' /><h3>" + charArr[i].name + "</h3>"
                 )
                 $(".characters").append(charThing)
 
@@ -109,30 +131,32 @@
 
         }
 
-         $(".char").on("click", ".char", function(){
-             if(!isHeroChosen){
-            chosenHero = charArr[$(this).attr("attr")]
-            console.log(chosenHero)
-            isHeroChosen = true
-            $(this).addClass("fader")
-             }
-             else if (!isEnemyChosen){
-            chosenEnemy = charArr[$(this).attr("attr")]
-            console.log(chosenenemy)
-            isEnemyChosen = true
-            $(this).addClass("fader")
-             }
+        $(".char").on("click", ".char", function () {
+            if (!isHeroChosen) {
+                chosenHero = charArr[$(this).attr("attr")]
+                console.log(chosenHero)
+                isHeroChosen = true
+                $(this).addClass("fader")
+            }
+            else if (!isEnemyChosen) {
+                chosenEnemy = charArr[$(this).attr("attr")]
+                console.log(chosenenemy)
+                isEnemyChosen = true
+                $(this).addClass("fader")
+            }
         })
 
         initGame()
-        
 
 
 
 
 
-    </script> 
-    
+
+
+
+    </script>
+
 </body>
 
 </html>
